@@ -1,93 +1,69 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/idxPpgnz)
-![School of Solana](https://github.com/Ackee-Blockchain/school-of-solana/blob/master/.banner/banner.png?raw=true)
+# Solana D21 Voting System
 
-## 📚Solana Program
-We are about halfway through the course, and you already have some experience with programming on Solana. It is time to create something on your own! You will be building a dApp that will serve as the culmination of everything you have learned so far. Feel free to implement whatever comes to your mind, (as long as it passes the requirements).
+A decentralized voting application built on Solana blockchain that implements the innovative D21 voting method for transparent and tamper-proof elections.
 
-**This does not mean that the School of Solana is coming to an end just yet!** There are still several exciting lectures ahead, as well as one security related task.
+## 🗳️ What is D21 Voting?
 
-### Task details
-This task consists of two parts:
-1. **Core of your dApp**
-    - A deployed Solana program.
-2. **Frontend**
-    - A simple frontend to interact with the dApp.
+D21 is an advanced voting system that allows voters to:
+- Cast multiple **positive votes** for their preferred candidates
+- Cast limited **negative votes** against candidates they oppose
+- Express nuanced preferences beyond simple single-choice voting
 
-### Requirements
-- An Anchor program deployed on **Devnet** or **Mainnet**.
-- The Anchor program must use a PDA (Program Derived Address).
-- At least one TypeScript **test** for each Anchor program instruction. These tests should cover both **happy** and **unhappy** (intentional error-triggering) scenarios.
-- A simple **frontend** deployed using your preferred provider (for more info, check below).
-- A filled out **PROJECT_DESCRIPTION.md** file.
+## ✨ Key Features
 
-### Ideas
-We highly recommend starting with something simple. Take time to think through your project and work on it in iterations. Do not try to implement everything at once!
+- **Multi-Candidate Elections**: Support for up to 50 candidates per election
+- **Flexible Voting Rules**: Configurable number of winners and voting limits
+- **Time-Bound Elections**: Automatic start/end time enforcement
+- **Anti-Fraud Protection**: Prevents double voting and vote conflicts
+- **Transparent Results**: All votes immutably recorded on Solana blockchain
+- **Authority Control**: Secure election management by designated authority
 
-Below is a list of few ideas to get you started:
-- **Social app**
-    - Instagram
-    - Giphy
-    - Friendtech
-    - Spotify
-- **Blog**
-- **Voting** ([D21 - Janeček method](https://www.ih21.org/en/guidelines))
-- **DeFi**
-    - Crowdfunding
-    - Raffles
-    - Escrow
-    - Tipping
-    - Lending ([Save Documentation](https://docs.save.finance/))
-    - Liquid Staking ([Marinade Documentation](https://docs.marinade.finance/))
-    - Data Query with Pyth ([Pyth Documentation](https://docs.pyth.network/price-feeds))
-    - AMM ([Raydium Documentation](https://raydium.gitbook.io/raydium/))
-- **Gaming**
-    - Browser Game ([Gaming on Solana](https://solanacookbook.com/gaming/nfts-in-games.html#nfts-in-games))
+## 📋 Voting Rules
 
-### Deadline
-The deadline for this task is **Wednesday, August 27th, at 23:59 UTC**.
->[!CAUTION]
->Note that we will not accept submissions after the deadline.
+### Plus Votes (Positive)
+- **1 Winner Election**: Up to 2 positive votes
+- **2 Winner Election**: Up to 3 positive votes  
+- **3 Winner Election**: Up to 4 positive votes
+- **4+ Winner Election**: Up to (winners + 1) positive votes
 
-### Submission
-There are two folders, one for the Anchor project, and one for the frontend. Push your changes to the **main** branch of **this** repository.
+### Minus Votes (Negative)
+- Up to 1/3 of allowed positive votes
+- Requires minimum 2 positive votes to use negative votes
+- Cannot vote both positively and negatively for same candidate
 
->[!IMPORTANT]
->It is essential that you fill out the `PROJECT_DESCRIPTION.md` template completely and accurately. This document will be used by AI for the initial evaluation, so provide detailed information about your project, including working links, clear descriptions, and technical implementation details.
+## 🏗️ How It Works
 
-### Evaluation
-The evaluation process is based on the **requirements**. If you meet the requirements, you pass the task!
+1. **Election Setup**: Authority creates election with candidates, timing, and rules
+2. **Voting Period**: Users cast sophisticated votes during active timeframe
+3. **Vote Validation**: Smart contract enforces all D21 rules and prevents fraud
+4. **Results**: Transparent, immutable vote tallies stored on blockchain
+5. **Finalization**: Election authority closes voting and finalizes results
 
->[!NOTE]
->We have a record number of participants this season, so the first round of evaluations will be conducted by AI to verify requirements before manual review. AI can make mistakes. If you believe you fulfilled all requirements but weren't graded correctly, please create a support ticket and we will resolve the issue.
+## 🔒 Security & Trust
 
->[!CAUTION]
->We expect original work that demonstrates your understanding and creativity. While you may draw inspiration from examples covered in lessons and tasks, **direct copying is not acceptable**. If you choose to build upon an example from the School of Solana materials, you must significantly expand it with additional features, instructions, and functionality to showcase your learning progress. 
+- **Blockchain Immutability**: All votes permanently recorded on Solana
+- **Cryptographic Security**: Prevents tampering and ensures vote integrity
+- **Time Lock**: Elections only accept votes during designated periods
+- **Duplicate Prevention**: Each user can only vote once per election
+- **Conflict Detection**: Automatic validation of vote consistency
 
-### Example Workflow
-Let's say you are going to implement the Twitter dApp as the Solana Program. Here's how the steps could look:
+## 🎯 Use Cases
 
-**1.** Implement Twitter dApp using the Anchor framework.
+- **Community Governance**: Decentralized decision making
+- **Corporate Elections**: Board member selection with nuanced preferences
+- **Political Voting**: Multi-candidate elections with preference expression
+- **Award Selections**: Choose winners while expressing opposition
+- **Any Democratic Process**: Where traditional voting falls short
 
-**2.** Test the Twitter dApp using the Anchor framework.
+## 📊 Benefits Over Traditional Voting
 
-**3.** Deploy the Twitter dApp on the Solana Devnet.
+- **More Expressive**: Voters can show both support and opposition
+- **Reduces Strategic Voting**: Less need for tactical vote allocation
+- **Better Representation**: Captures voter sentiment more accurately
+- **Tamper-Proof**: Blockchain ensures election integrity
+- **Transparent**: All results publicly verifiable
+- **Cost-Effective**: Reduces need for expensive election infrastructure
 
-**4.** Using the create solana dapp template, implement frontend for the Twitter dApp.
+## 🌟 Perfect For
 
-**5.** Publish Frontend using [Vercel](https://vercel.com).
-
-**6.** Fill out the PROJECT_DESCRIPTION.md template.
-
-**7.** Submit the Twitter dApp using GitHub Classroom.
-
-### Useful Links
-- [Vercel](https://vercel.com)
-- [Create Solana Dapp](https://github.com/solana-foundation/create-solana-dapp)
-- [Account Macro Constraints](https://docs.rs/anchor-lang/latest/anchor_lang/derive.Accounts.html#constraints)
-- [Solana Developers Courses](https://solana.com/developers/courses)
-
------
-
-### Need help?
->[!TIP]
->If you have any questions, feel free to reach out to us on [Discord](https://discord.gg/z3JVuZyFnp).
+Organizations seeking transparent, secure, and sophisticated voting mechanisms where traditional single-choice voting doesn't capture the full spectrum of voter preferences.
